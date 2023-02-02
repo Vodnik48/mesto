@@ -6,7 +6,7 @@
     cursor: pointer;
     border: 2px solid white;
     transition: .3s linear;
-    background-image: url(../../../images/Add\ Button.svg);
+    background-image: url(../../../images/Plus.svg);
     object-fit: contain;
     background-repeat: no-repeat;
     background-color: black;
