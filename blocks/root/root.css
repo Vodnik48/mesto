@@ -1,0 +1,17 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    max-width: 1280px;
+    font-family: 'Inter', sans-serif;
+    align-self: center;
+    margin: 0 auto;
+    color: #fff;
+
+}
+
+@media screen and (max-width: 425px) {
+    .root {
+        margin: 0;
+    }
+}
