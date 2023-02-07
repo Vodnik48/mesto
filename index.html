@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
+    <script defer="defer" src="./index.js">
   </head>
 
   <body class="root">
@@ -26,7 +28,7 @@
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
           </div>
-          <p class="profile__description">Исследователь океана</p>
+          <p class="profile__job">Исследователь океана</p>
         </div>
         <button class="profile__add-button" type="button"></button>
       </section>
@@ -98,14 +100,43 @@
           </div>
         </article>
       </section>
-      
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup popup_edit-profile">
+    <div class="popup">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
+        <form
+          class="popup__form popup__edit-form"
+          name="popup__edit-form"
+          novalidate
+        >
+          <input
+            type="text"
+            class="popup__input popup__profile-name"
+            name="profileName"
+            placeholder="Жак-Ив Кусто"
+            id="popup__profile-name"
+          />
+
+          <input
+            type="text"
+            class="popup__input popup__profile-job"
+            name="description"
+            placeholder="Исследователь океана"
+            id="popup__profile-job"
+          />
+
+          <button type="submit" class="popup__button-save">Сохранить</button>
+        </form>
+        <button class="popup__button-close" type="button">
+          <img
+            class="popup__icon"
+            src="./images/Close Icon.svg"
+            alt="кнопка закрыть"
+          />
+        </button>
       </div>
     </div>
   </body>
