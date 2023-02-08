@@ -1,4 +1,4 @@
-.cards {
+.cards__ul {
     display: grid;
     grid-template-columns: repeat(3, 282px);
     column-gap: 17px;
@@ -9,13 +9,13 @@
    }
   
    @media screen and (max-width: 1023px){
-    .cards {
+    .cards__ul {
       grid-template-columns: repeat(2, 282px);
     } 
   }
   
   @media screen and (max-width: 767px){
-    .cards {
+    .cards__ul {
       row-gap: 20px;
       grid-template-columns: 282px;
     } 
