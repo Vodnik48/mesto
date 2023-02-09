@@ -1,10 +1,10 @@
 .card {
-    position: relative;
-    border-radius: 10px;
-    background: #FFFFFF;
-    color: black;
-    overflow: hidden;
-    padding: 0;
-    margin: 0; 
-    list-style-type: none;
-  }
+  position: relative;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: black;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
