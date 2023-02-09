@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="html, css, js" />
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
@@ -106,12 +107,14 @@
     </footer>
     <div class="popup">
       <div class="popup__container">
-        <h2 class="popup__title">Редактировать профиль</h2>
+        <button class="popup__button-close" type="button"></button>
+
         <form
           class="popup__form popup__edit-form"
           name="popup__edit-form"
           novalidate
         >
+          <h2 class="popup__title">Редактировать профиль</h2>
           <input
             type="text"
             class="popup__input popup__profile-name"
@@ -130,13 +133,6 @@
 
           <button type="submit" class="popup__button-save">Сохранить</button>
         </form>
-        <button class="popup__button-close" type="button">
-          <img
-            class="popup__icon"
-            src="./images/Close Icon.svg"
-            alt="кнопка закрыть"
-          />
-        </button>
       </div>
     </div>
     <script src="./index.js"></script>
