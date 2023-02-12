@@ -5,10 +5,10 @@
   }
   
   @media screen and (max-width: 1023px) {
-    .profile__name {
+    .profile__info {
       gap: 10px;
       position: relative;
       top: 0;
-      left: 14px;
+      margin-left: 48.5px;
     }
   }

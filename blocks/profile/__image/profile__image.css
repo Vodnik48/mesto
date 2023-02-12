@@ -6,7 +6,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    transition: .3s linear;
+    transition: opacity .2s ease-in-out;
 }
 
 .profile__image:hover {
