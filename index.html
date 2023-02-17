@@ -36,6 +36,7 @@
       <section class="cards">
         <ul class="cards__ul">
           <li class="card">
+            <button class="card__delete-button" type="button"></button>
             <img
               class="card__image"
               src="./images/kirill-pershin-1088404-unsplash.jpg"
@@ -47,6 +48,7 @@
             </div>
           </li>
           <li class="card">
+            <button class="card__delete-button" type="button"></button>
             <img
               class="card__image"
               src="./images/kirill-pershin-1404681-unsplash.jpg"
@@ -58,6 +60,7 @@
             </div>
           </li>
           <li class="card">
+            <button class="card__delete-button" type="button"></button>
             <img
               class="card__image"
               src="./images/kirill-pershin-1556355-unsplash.jpg"
@@ -69,6 +72,7 @@
             </div>
           </li>
           <li class="card">
+            <button class="card__delete-button" type="button"></button>
             <img
               class="card__image"
               src="./images/kirill-pershin-1404681-unsplash.jpg"
@@ -80,6 +84,7 @@
             </div>
           </li>
           <li class="card">
+            <button class="card__delete-button" type="button"></button>
             <img
               class="card__image"
               src="./images/kirill-pershin-1556355-unsplash.jpg"
@@ -91,6 +96,7 @@
             </div>
           </li>
           <li class="card">
+            <button class="card__delete-button" type="button"></button>
             <img
               class="card__image"
               src="./images/kirill-pershin-1088404-unsplash.jpg"
@@ -107,7 +113,7 @@
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup popup_type_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
 
@@ -121,7 +127,7 @@
             class="popup__input popup__input_profile_name"
             name="profileName"
             placeholder="Жак-Ив Кусто"
-            id="popup__profile-name"
+            id="popup__input_profile_name"
           />
 
           <input
@@ -129,11 +135,48 @@
             class="popup__input popup__input_profile_job"
             name="profileJob"
             placeholder="Исследователь океана"
-            id="popup__profile-job"
+            id="popup__input_profile_job"
           />
 
-          <button type="submit" class="popup__button-save">Сохранить</button>
+          <button type="submit" class="popup__button popup__button_save">Сохранить</button>
         </form>
+        <button class="popup__button-close" type="button"></button>
+      </div>
+    </div>
+    <div class="popup popup_type_card">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+
+        <form
+          class="popup__form popup__form_type_edit"
+          name="popup__form_type_edit"
+          novalidate
+        >
+          <input
+            type="text"
+            class="popup__input popup__input_card_name"
+            name="profileName"
+            placeholder="Название"
+            id="popup__input_card_name"
+          />
+
+          <input
+            type="text"
+            class="popup__input popup__input_card_link"
+            name="profileJob"
+            placeholder="Ссылка на картинку"
+            id="popup__input_card_link"
+          />
+
+          <button type="submit" class="popup__button popup__button_disabled">Создать</button>
+        </form>
+        <button class="popup__button-close" type="button"></button>
+      </div>
+    </div>
+    <div class="popup popup_type_image">
+      <div class="popup__image-container">
+        <img class="popup__image" src="#" alt="#">
+        <h3 class="popup__image-heading"></h3>
         <button class="popup__button-close" type="button"></button>
       </div>
     </div>

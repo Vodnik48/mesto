@@ -1,0 +1,14 @@
+.card__delete-button {
+    background: url(../../../images/Delit_pfoto.svg) no-repeat 50%/cover;
+    border: none;
+    cursor: pointer;
+    height: 19px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: opacity .2s ease-in-out;
+    width: 18px;
+    z-index: 2;
+}
