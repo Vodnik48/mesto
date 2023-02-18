@@ -12,3 +12,6 @@
     width: 18px;
     z-index: 2;
 }
+.card__delete-button {
+    opacity: .5;
+}

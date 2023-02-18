@@ -1,0 +1,7 @@
+.popup__window-container{
+    max-width: 75vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}

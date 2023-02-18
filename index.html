@@ -18,96 +18,23 @@
         <div class="profile__group-conteiner">
           <div class="profile__avatar">
             <img
-            alt="Фото профиля."
-            src="./images/image.jpg"
-            class="profile__image"
+              alt="Фото профиля."
+              src="./images/image.jpg"
+              class="profile__image"
             />
           </div>
-         <div class="profile__group">
-          <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
+          <div class="profile__group">
+            <div class="profile__info">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+            </div>
+            <p class="profile__job">Исследователь океана</p>
           </div>
-          <p class="profile__job">Исследователь океана</p>
         </div>
-      </div>
         <button class="profile__add-button" type="button"></button>
       </section>
       <section class="cards">
-        <ul class="cards__ul">
-          <li class="card">
-            <button class="card__delete-button" type="button"></button>
-            <img
-              class="card__image"
-              src="./images/kirill-pershin-1088404-unsplash.jpg"
-              alt="Гора Домбая"
-            />
-            <div class="card__inform">
-              <h2 class="card__title">Карачаевск</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button" type="button"></button>
-            <img
-              class="card__image"
-              src="./images/kirill-pershin-1404681-unsplash.jpg"
-              alt="Фото Храма"
-            />
-            <div class="card__inform">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button" type="button"></button>
-            <img
-              class="card__image"
-              src="./images/kirill-pershin-1556355-unsplash.jpg"
-              alt="Гора на горизонте"
-            />
-            <div class="card__inform">
-              <h2 class="card__title">Домбай</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button" type="button"></button>
-            <img
-              class="card__image"
-              src="./images/kirill-pershin-1404681-unsplash.jpg"
-              alt="Фото Храма"
-            />
-            <div class="card__inform">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button" type="button"></button>
-            <img
-              class="card__image"
-              src="./images/kirill-pershin-1556355-unsplash.jpg"
-              alt="Гора на горизонте"
-            />
-            <div class="card__inform">
-              <h2 class="card__title">Карачаевск</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <button class="card__delete-button" type="button"></button>
-            <img
-              class="card__image"
-              src="./images/kirill-pershin-1088404-unsplash.jpg"
-              alt="Гора Домбая"
-            />
-            <div class="card__inform">
-              <h2 class="card__title">Домбай</h2>
-              <button class="card__like" type="button"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="cards__ul"></ul>
       </section>
     </main>
     <footer class="footer">
@@ -119,8 +46,8 @@
 
         <form
           class="popup__form popup__form_type_edit"
-          name="popup__form_type_edit"
-          novalidate
+          name="form"
+          id="form"
         >
           <input
             type="text"
@@ -138,48 +65,65 @@
             id="popup__input_profile_job"
           />
 
-          <button type="submit" class="popup__button popup__button_save">Сохранить</button>
+          <button type="submit" class="popup__button popup__button_save">
+            Сохранить
+          </button>
         </form>
         <button class="popup__button-close" type="button"></button>
       </div>
     </div>
     <div class="popup popup_type_card">
-      <div class="popup__container">
+      <div class="popup__container popup__container_add">
         <h2 class="popup__title">Новое место</h2>
 
-        <form
-          class="popup__form popup__form_type_edit"
-          name="popup__form_type_edit"
-          novalidate
-        >
+        <form class="popup__form popup__form_type_edit" id="form" name="form">
           <input
             type="text"
-            class="popup__input popup__input_card_name"
+            class="popup__input popup__input_type_title"
             name="profileName"
             placeholder="Название"
-            id="popup__input_card_name"
+            id="popup__input_type_title"
           />
 
           <input
             type="text"
-            class="popup__input popup__input_card_link"
+            class="popup__input popup__input_type_link"
             name="profileJob"
             placeholder="Ссылка на картинку"
-            id="popup__input_card_link"
+            id="popup__input_type_link"
           />
 
-          <button type="submit" class="popup__button popup__button_disabled">Создать</button>
+          <button type="submit" class="popup__button popup__button_disabled">
+            Создать
+          </button>
         </form>
-        <button class="popup__button-close" type="button"></button>
+        <button
+          class="popup__button-close popup__add-close"
+          type="button"
+        ></button>
       </div>
     </div>
-    <div class="popup popup_type_image">
-      <div class="popup__image-container">
-        <img class="popup__image" src="#" alt="#">
-        <h3 class="popup__image-heading"></h3>
-        <button class="popup__button-close" type="button"></button>
+    <div class="popup popup_type_window">
+      <div class="popup__window-container">
+        <button
+          class="popup__button-close popup__window-close"
+          type="button"
+        ></button>
+        <img class="popup__window-image" src="#" alt="" />
+        <h2 class="popup__zoom-title"></h2>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
+    <template class="template">
+      <li class="card">
+        <button class="card__delete-button" type="button"></button>
+        <img class="card__image" src="#" alt="фото" />
+        <div class="card__inform">
+          <h2 class="card__title"></h2>
+          <button class="card__like" type="button"></button>
+        </div>
+      </li>
+    </template>
+    <script defer src="./scripts/massiv-foto.js"></script>
+    <script defer src="./scripts/index.js"></script>
   </body>
 </html>

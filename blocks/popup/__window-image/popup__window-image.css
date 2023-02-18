@@ -1,0 +1,7 @@
+.popup__window-image{
+    margin: 0 auto;
+    max-width: 75vw;
+    max-height: 75vh;
+    border: none;
+    color: white;
+}
