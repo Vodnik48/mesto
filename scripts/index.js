@@ -5,8 +5,8 @@ const popuptypeProfile = document.querySelector('.popup_type_profile');
 const editButton = document.querySelector('.profile__edit-button');
 //Ред_Проф.
 const formElement = document.querySelector('.popup__form');
-const nameInput = formElement.querySelector('.popup__input_profile_name');
-const jobInput = formElement.querySelector('.popup__input_profile_job');
+const nameInput = document.querySelector('.popup__input_profile_name');
+const jobInput = document.querySelector('.popup__input_profile_job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 // Открытие_Закрытие формы для доб. карточек 
@@ -27,12 +27,12 @@ const windowImage = document.querySelector('.popup__window-image');
 const popupZoomTitle = document.querySelector('.popup__zoom-title');
 const closeButtonWindow = document.querySelector('.popup__window-close')
 
-function closePopup (element) {
+function closePopup(element) {
     element.classList.remove('popup_opened');
-  }
-function openPopup (element) {
+}
+function openPopup(element) {
     element.classList.add('popup_opened');
-  }
+}
 const openPopupEditTypeProfile = () => {
     openPopup(popuptypeProfile);
     const name = profileName.textContent;
@@ -41,7 +41,7 @@ const openPopupEditTypeProfile = () => {
     jobInput.value = job;
 }
 function submiteEditForm(evt) {
-    evt.preventDefault(); 
+    evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     closePopup(popuptypeProfile);
@@ -49,39 +49,40 @@ function submiteEditForm(evt) {
 function createCard(nameValue, linkValue) {
     const cardItem = tempalate.querySelector('.card').cloneNode(true);
     cardItem.querySelector('.card__title').textContent = nameValue;
-    cardItem.querySelector('.card__delete-button').addEventListener('click', function (){
+    cardItem.querySelector('.card__delete-button').addEventListener('click', function () {
         cardItem.remove();
     });
     cardItem.querySelector('.card__like').addEventListener('click', function (evt) {
-      evt.target.classList.toggle('card__like_active');
+        evt.target.classList.toggle('card__like_active');
     });
     const cardimage = cardItem.querySelector('.card__image');
     cardimage.src = linkValue;
     cardimage.alt = nameValue;
     cardimage.addEventListener('click', (evt) => {
-      openPopup(popupZoomImage);
-      const windowCard = evt.target;
-      windowImage.src = windowCard.src;
-      windowImage.alt = nameValue;
-      popupZoomTitle.textContent = nameValue;
+        openPopup(popupZoomImage);
+        const windowCard = evt.target;
+        windowImage.src = windowCard.src;
+        windowImage.alt = nameValue;
+        popupZoomTitle.textContent = nameValue;
     });
     return cardItem;
 };
 initialCards.forEach((card) => {
     const addCardNew = createCard(card.name, card.link);
     elementsList.append(addCardNew);
-});   
+});
 function submiteCreateForm(evt) {
     evt.preventDefault();
     const addCardNew = createCard(title.value, link.value);
     evt.target.reset();
     elementsList.prepend(addCardNew);
     closePopup(popupTypeCard);
-};    
-closeButtonWindow.addEventListener('click', () => { closePopup(popupZoomImage)});
+};
+closeButtonWindow.addEventListener('click', () => { closePopup(popupZoomImage) });
 containerAdd.addEventListener('submit', submiteCreateForm);
-formElement.addEventListener('submit', submiteEditForm); 
+formElement.addEventListener('submit', submiteEditForm);
 editButton.addEventListener('click', openPopupEditTypeProfile);
-closeButton.addEventListener('click', () => { closePopup(popuptypeProfile)});
-openButtonAdd.addEventListener('click', () => { openPopup(popupTypeCard)});
-closeButtonAdd.addEventListener('click', () => { closePopup(popupTypeCard)});
+closeButton.addEventListener('click', () => { closePopup(popuptypeProfile) });
+openButtonAdd.addEventListener('click', () => { openPopup(popupTypeCard) });
+closeButtonAdd.addEventListener('click', () => { closePopup(popupTypeCard) });
+
