@@ -1,30 +1,29 @@
-
 //Открытие_Закрытие формы проф
-const closeButton = document.querySelector('.popup__button-close');
-const popuptypeProfile = document.querySelector('.popup_type_profile');
-const editButton = document.querySelector('.profile__edit-button');
+const closeButton = document.querySelector('.popup__button-close')
+const popuptypeProfile = document.querySelector('.popup_type_profile')
+const editButton = document.querySelector('.profile__edit-button')
 //Ред_Проф.
-const formElement = document.querySelector('.popup__form');
-const nameInput = document.querySelector('.popup__input_profile_name');
-const jobInput = document.querySelector('.popup__input_profile_job');
-const profileName = document.querySelector('.profile__name');
-const profileJob = document.querySelector('.profile__job');
+const formElement = document.querySelector('.popup__form')
+const nameInput = document.querySelector('.popup__input_profile_name')
+const jobInput = document.querySelector('.popup__input_profile_job')
+const profileName = document.querySelector('.profile__name')
+const profileJob = document.querySelector('.profile__job')
 // Открытие_Закрытие формы для доб. карточек 
-const popupTypeCard = document.querySelector('.popup_type_card');
-const openButtonAdd = document.querySelector('.profile__add-button');
-const closeButtonAdd = document.querySelector('.popup__add-close');
+const popupTypeCard = document.querySelector('.popup_type_card')
+const openButtonAdd = document.querySelector('.profile__add-button')
+const closeButtonAdd = document.querySelector('.popup__add-close')
 // инициализация карточек
-const tempalate = document.querySelector('.template').content;
-const cards = document.querySelector('.cards');
-const cardsList = cards.querySelector('.cards__ul');
+const template = document.querySelector('#template').content
+const cards = document.querySelector('.cards')
+const cardsList = cards.querySelector('.cards__ul')
 // добавление карточек
-const title = document.querySelector('.popup__input_type_title');
-const link = document.querySelector('.popup__input_type_link');
-const containerAdd = document.querySelector('.popup__container_add');
+const title = document.querySelector('.popup__input_type_title')
+const link = document.querySelector('.popup__input_type_link')
+const containerAdd = document.querySelector('.popup__container_add')
 // popupZoom
-const popupZoomImage = document.querySelector('.popup_type_window');
-const windowImage = document.querySelector('.popup__window-image');
-const popupZoomTitle = document.querySelector('.popup__zoom-title');
+const popupZoomImage = document.querySelector('.popup_type_window')
+const windowImage = document.querySelector('.popup__window-image')
+const popupZoomTitle = document.querySelector('.popup__zoom-title')
 const closeButtonWindow = document.querySelector('.popup__window-close')
 
 function closePopup(element) {
@@ -47,7 +46,7 @@ function submiteEditForm(evt) {
     closePopup(popuptypeProfile);
 }
 function createCard(nameValue, linkValue) {
-    const cardItem = tempalate.querySelector('.card').cloneNode(true);
+    const cardItem = template.querySelector('.card').cloneNode(true);
     cardItem.querySelector('.card__title').textContent = nameValue;
     cardItem.querySelector('.card__delete-button').addEventListener('click', function () {
         cardItem.remove();
@@ -78,6 +77,7 @@ function submiteCreateForm(evt) {
     cardsList.prepend(addCardNew);
     closePopup(popupTypeCard);
 };
+
 closeButtonWindow.addEventListener('click', () => { closePopup(popupZoomImage) });
 containerAdd.addEventListener('submit', submiteCreateForm);
 formElement.addEventListener('submit', submiteEditForm);

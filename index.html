@@ -41,13 +41,13 @@
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
 
-        <form class="popup__form popup__form_type_edit" id="form">
+        <form class="popup__form" name="form" id="form">
           <input
             type="text"
             class="popup__input popup__input_profile_name"
             name="profileName"
             placeholder="Жак-Ив Кусто"
-            id="popup__input_profile_name"
+            id="nameInput"
           />
 
           <input
@@ -55,7 +55,7 @@
             class="popup__input popup__input_profile_job"
             name="profileJob"
             placeholder="Исследователь океана"
-            id="popup__input_profile_job"
+            id="jobInput"
           />
 
           <button type="submit" class="popup__button popup__button_save">
@@ -69,14 +69,14 @@
       <div class="popup__container popup__container_add">
         <h2 class="popup__title">Новое место</h2>
         <form
-          class="popup__form popup__form_type_edit"
-          id="popup__form_type_edit"
+          class="popup__form"
+          id="form"
           name="form"
         >
           <input
             type="text"
             class="popup__input popup__input_type_title"
-            name="profileName"
+            name="cardtitle"
             placeholder="Название"
             id="popup__input_type_title"
           />
@@ -84,7 +84,7 @@
           <input
             type="text"
             class="popup__input popup__input_type_link"
-            name="profileJob"
+            name="cardlink"
             placeholder="Ссылка на картинку"
             id="popup__input_type_link"
           />
@@ -109,7 +109,7 @@
         <h2 class="popup__zoom-title"></h2>
       </div>
     </div>
-    <template class="template">
+    <template id="template">
       <li class="card">
         <button
           class="card__delete-button"
