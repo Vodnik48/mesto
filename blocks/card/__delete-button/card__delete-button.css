@@ -12,6 +12,6 @@
     width: 18px;
     z-index: 2;
 }
-.card__delete-button {
+.card__delete-button:hover {
     opacity: .5;
 }
