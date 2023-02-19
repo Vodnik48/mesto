@@ -2,18 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="html, css, js" />
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
-
   <body class="root">
     <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип Место" />
     </header>
-    <main class="content">
+    <main>
       <section class="profile">
         <div class="profile__group-conteiner">
           <div class="profile__avatar">
@@ -44,7 +41,7 @@
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
 
-        <form class="popup__form popup__form_type_edit"  id="form">
+        <form class="popup__form popup__form_type_edit" id="form">
           <input
             type="text"
             class="popup__input popup__input_profile_name"
@@ -71,7 +68,11 @@
     <div class="popup popup_type_card">
       <div class="popup__container popup__container_add">
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form popup__form_type_edit" id="popup__form_type_edit" name="form">
+        <form
+          class="popup__form popup__form_type_edit"
+          id="popup__form_type_edit"
+          name="form"
+        >
           <input
             type="text"
             class="popup__input popup__input_type_title"
@@ -110,15 +111,23 @@
     </div>
     <template class="template">
       <li class="card">
-        <button class="card__delete-button" type="button"></button>
+        <button
+          class="card__delete-button"
+          type="button"
+          aria-label="Удалить"
+        ></button>
         <img class="card__image" src="#" alt="фото" />
         <div class="card__inform">
           <h2 class="card__title"></h2>
-          <button class="card__like" type="button"></button>
+          <button
+            class="card__like"
+            type="button"
+            aria-label="Нравится"
+          ></button>
         </div>
       </li>
     </template>
-    <script src="../mesto/scripts/massiv-foto.js"></script>
-    <script src="../mesto/scripts/index.js"></script>
+    <script defer src="../mesto/scripts/massiv-foto.js"></script>
+    <script defer src="../mesto/scripts/index.js"></script>
   </body>
 </html>

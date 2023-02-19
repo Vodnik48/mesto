@@ -69,13 +69,13 @@ function createCard(nameValue, linkValue) {
 };
 initialCards.forEach((card) => {
     const addCardNew = createCard(card.name, card.link);
-    elementsList.append(addCardNew);
+    cardsList.append(addCardNew);
 });
 function submiteCreateForm(evt) {
     evt.preventDefault();
     const addCardNew = createCard(title.value, link.value);
     evt.target.reset();
-    elementsList.prepend(addCardNew);
+    cardsList.prepend(addCardNew);
     closePopup(popupTypeCard);
 };
 closeButtonWindow.addEventListener('click', () => { closePopup(popupZoomImage) });
