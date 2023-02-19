@@ -1,9 +1,9 @@
 //Открытие_Закрытие формы проф
-const closeButton = document.querySelector('.popup__button-close')
+const closeButton = document.querySelector('#profile__close-button')
 const popuptypeProfile = document.querySelector('.popup_type_profile')
 const editButton = document.querySelector('.profile__edit-button')
 //Ред_Проф.
-const formElement = document.querySelector('.popup__form')
+const formElement = document.querySelector('#prfile__form')
 const nameInput = document.querySelector('.popup__input_profile_name')
 const jobInput = document.querySelector('.popup__input_profile_job')
 const profileName = document.querySelector('.profile__name')
