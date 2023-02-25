@@ -48,16 +48,24 @@
             name="profileName"
             placeholder="Жак-Ив Кусто"
             id="nameInput"
+            placeholder="Укажите имя"
+            minlength="2"
+            maxlength="40"
+            required
           />
-
+          <span id="nameInput-error" class="popup__error"></span>
           <input
             type="text"
             class="popup__input popup__input_profile_job"
             name="profileJob"
             placeholder="Исследователь океана"
             id="jobInput"
+            placeholder="Укажите професcию"
+            minlength="2"
+            maxlength="200"
+            required
           />
-
+          <span id="jobInput-error" class="popup__error"></span>
           <button type="submit" class="popup__button popup__button_save">
             Сохранить
           </button>
