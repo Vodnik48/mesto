@@ -2,9 +2,7 @@
     display: flex;
     justify-content: start;
     align-items: flex-start;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     min-width: 358px;
     min-height: 27px;
@@ -12,19 +10,12 @@
     font-size: 14px;
     line-height: 17px;
     box-sizing: border-box;
-    padding: 0 0 13px;
-    margin-bottom: 30px;
+    padding: 0;
+    margin-bottom: 7px;
 }
-.popup__input:last-of-type {
-    margin-bottom: 48px;
-}
-
 
 @media screen and (max-width: 1023px){
 .popup__input {
     min-width: 238px;
-}
-.popup__input:last-of-type {
-    margin-bottom: 45px;
 }
 }

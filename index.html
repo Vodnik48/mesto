@@ -40,12 +40,16 @@
     <div class="popup popup_type_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-
-        <form class="popup__form" id="prfile__form" name="form">
+        <form
+          class="popup__form popup__form_type_profile"
+          id="prfile__form"
+          name="prfile__form"
+          novalidate
+        >
           <input
             type="text"
             class="popup__input popup__input_profile_name"
-            name="profileName"
+            name="nameInput"
             placeholder="Жак-Ив Кусто"
             id="nameInput"
             placeholder="Укажите имя"
@@ -70,15 +74,21 @@
             Сохранить
           </button>
         </form>
-        <button class="popup__button-close" id="profile__close-button" type="button"></button>
+        <button
+          class="popup__button-close"
+          id="profile__close-button"
+          type="button"
+        ></button>
       </div>
     </div>
     <div class="popup popup_type_card">
       <div class="popup__container popup__container_add">
         <h2 class="popup__title">Новое место</h2>
-        <form
-          class="popup__form"
-          name="form"
+        <form 
+        class="popup__form popup__form_type_card"
+        name="form" 
+        id="card__form" 
+        novalidate
         >
           <input
             type="text"
@@ -86,17 +96,21 @@
             name="cardtitle"
             placeholder="Название"
             id="popup__input_type_title"
+            minlength="2"
+            maxlength="30"
+            required
           />
-
+          <span id="input-title-error" class="popup__error"></span>
           <input
-            type="text"
+            type="url"
             class="popup__input popup__input_type_link"
             name="cardlink"
             placeholder="Ссылка на картинку"
             id="popup__input_type_link"
+            required
           />
-
-          <button type="submit" class="popup__button popup__button_disabled">
+          <span id="input-link-error" class="popup__error"></span>
+          <button type="submit" class="popup__button popup__button-submit">
             Создать
           </button>
         </form>
@@ -109,6 +123,7 @@
     <div class="popup popup_type_window">
       <div class="popup__window-container">
         <button
+          aria-label="Close"  
           class="popup__button-close popup__window-close"
           type="button"
         ></button>
@@ -135,6 +150,7 @@
       </li>
     </template>
     <script defer src="./scripts/massiv-foto.js"></script>
+    <script defer src="./scripts/validate.js"></script>
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>
