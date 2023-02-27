@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место</title>
   </head>
   <body class="root">
     <header class="header">
@@ -43,7 +43,6 @@
         <h2 class="popup__title">Редактировать профиль</h2>
         <form
           class="popup__form popup__form_type_profile"
-          id="prfile__form"
           name="prfile__form"
           novalidate
         >
@@ -52,7 +51,7 @@
             class="popup__input popup__input_profile_name"
             name="nameInput"
             placeholder="Жак-Ив Кусто"
-            id="nameInput"
+            id="input-name"
             placeholder="Укажите имя"
             minlength="2"
             maxlength="40"
@@ -64,7 +63,7 @@
             class="popup__input popup__input_profile_job"
             name="profileJob"
             placeholder="Исследователь океана"
-            id="jobInput"
+            id="input-job"
             placeholder="Укажите професcию"
             minlength="2"
             maxlength="200"
@@ -96,7 +95,7 @@
             class="popup__input popup__input_type_title"
             name="cardtitle"
             placeholder="Название"
-            id="input-title"
+            id="input-place"
             minlength="2"
             maxlength="30"
             required
@@ -150,8 +149,8 @@
         </div>
       </li>
     </template>
-    <script defer src="./scripts/massiv-foto.js"></script>
-    <script defer src="./scripts/validate.js"></script>
-    <script defer src="./scripts/index.js"></script>
+    <script src="./scripts/massiv-foto.js"></script>
+    <script src="./scripts/validate.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
