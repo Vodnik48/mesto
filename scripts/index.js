@@ -21,7 +21,7 @@ const popupTypeCard = document.querySelector('.popup_type_card')
 const openButtonAdd = document.querySelector('.profile__add-button')
 const closeButtonAdd = document.querySelector('.popup__add-close')
 // инициализация карточек
-const template = document.querySelector('#template').content
+const template = document.querySelector('.template-card').content
 const cards = document.querySelector('.cards')
 const cardsList = cards.querySelector('.cards__ul')
 // добавление карточек
@@ -34,51 +34,77 @@ const popupZoomImage = document.querySelector('.popup_type_window')
 const windowImage = document.querySelector('.popup__window-image')
 const popupZoomTitle = document.querySelector('.popup__zoom-title')
 const closeButtonWindow = document.querySelector('.popup__window-close')
+
 // Границы окна Popup 
 const popupClosest = document.querySelectorAll('.popup');
 
 // Общая функция закрытия Popup
 function closePopup(element) {
     element.classList.remove('popup_opened');
+    document.removeEventListener('keydown', handleEscClosePopup);
 }
+
 // Общая функция открытия Popup
 function openPopup(element) {
     element.classList.add('popup_opened');
     document.addEventListener('keydown', handleEscClosePopup);
 };
+// Функция закрытия по клавише Esc
+const handleEscClosePopup = (evt) => {
+  if (evt.key === 'Escape') {
+    const popupClose = document.querySelector('.popup_opened');
+    closePopup(popupClose);
+  };
+};
+
+// Функция лайк-дизлайка карточки
+const bindCardLike = (buttonLike) => {
+  buttonLike.addEventListener('click', (evt) => {
+    evt.target.classList.toggle('card__like_active');
+  });
+};
+
+// Функция удаления карточки
+const bindCardDelete = (cardData) => {
+  cardData.addEventListener('click', (evt) => {
+    evt.target.closest('.card').remove();
+  });
+};
+
 // Функция создания карт
-function createCard(nameValue, linkValue) {
-    const cardItem = template.querySelector('.card').cloneNode(true);
-    cardItem.querySelector('.card__title').textContent = nameValue;
-    cardItem.querySelector('.card__delete-button').addEventListener('click', function () {
-        cardItem.remove();
-    });
-    cardItem.querySelector('.card__like').addEventListener('click', function (evt) {
-        evt.target.classList.toggle('card__like_active');
-    });
-    const cardimage = cardItem.querySelector('.card__image');
-    cardimage.src = linkValue;
-    cardimage.alt = nameValue;
-    cardimage.addEventListener('click', (evt) => {
-        openPopup(popupZoomImage);
-        const windowCard = evt.target;
-        windowImage.src = windowCard.src;
-        windowImage.alt = nameValue;
-        popupZoomTitle.textContent = nameValue;
-    });
-    return cardItem;
+const createCard = (cardData) => {
+  const cardItem = template.cloneNode(true);
+  const cardTitle = cardItem.querySelector('.card__title');                   
+  const cardPhoto = cardItem.querySelector('.card__image');                   
+  const cardLike = cardItem.querySelector('.card__like');                 
+  const cardDel = cardItem.querySelector('.card__delete-button'); 
+  
+  cardTitle.textContent = cardData.name;
+  cardPhoto.src = cardData.link;
+  cardPhoto.alt = cardData.alt;
+
+  bindCardPreview(cardPhoto);                                          
+  bindCardLike(cardLike);                                              
+  bindCardDelete(cardDel);
+
+  return cardItem;
 };
-initialCards.forEach((card) => {
-    const addCardNew = createCard(card.name, card.link);
-    cardsList.append(addCardNew);
+
+// Функция открытия просмотра изображения карточки
+const bindCardPreview = (cardImageElement) => {
+  cardImageElement.addEventListener('click', (evt) => {
+    openPopup(popupZoomImage);
+
+    windowImage.src = cardImageElement.src;
+    windowImage.alt = cardImageElement.alt;
+    popupZoomTitle.textContent = evt.target.closest('.card').textContent;
+  });
+};
+
+// Создание карточек из массива
+initialCards.forEach((cardData) => {
+  cardsList.append(createCard(cardData));
 });
-function submiteCreateForm(evt) {
-    evt.preventDefault();
-    const addCardNew = createCard(title.value, link.value);
-    evt.target.reset();
-    cardsList.prepend(addCardNew);
-    closePopup(popupTypeCard);
-};
 
 // Функция сброса общих стилей при открытии Popup
 const resetValidationStyle = (objectValidation) => {
@@ -119,14 +145,27 @@ formElement.addEventListener('submit', (evt) => {
 // Функция открытия Popup редактирования профиля
 editButton.addEventListener('click', () => {
     openPopup(popuptypeProfile);
-    const name = profileName.textContent;
-    const job = profileJob.textContent;
-    nameInput.value = name;
-    jobInput.value = job;
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
     resetValidationStyle(objectValidation);
 });
 
-
+// Закрытие всех Popup при нажатии на крестик 
+closeButton.forEach((item) => {
+  item.addEventListener('click', (evt) => {
+    const popupClosestCross = popupAddClosest(evt);
+    closePopup(popupClosestCross);
+  });
+});
+// Закрытие всех Popup при нажатии на Overlay 
+popupClosest.forEach((item) => {
+  item.addEventListener('click', (evt) => {
+    if (evt.target === evt.currentTarget) {
+      const popupClosestOverlay = popupAddClosest(evt);
+      closePopup(popupClosestOverlay);
+    };
+  });
+});
 
 // Функция открытия Popup добавления Карточки Места
 openButtonAdd.addEventListener('click', () => { 
@@ -147,24 +186,10 @@ popupFormCard.addEventListener('submit', (evt) => {
     evt.target.reset();
     closePopup(popupTypeCard);
   });
-// Закрытие всех Popup при нажатии на крестик 
-closeButton.forEach((item) => {
-  item.addEventListener('click', (evt) => {
-    const popupClosestCross = popupAddClosest(evt);
-    closePopup(popupClosestCross);
-  });
-});
-// Закрытие всех Popup при нажатии на Overlay 
-popupClosest.forEach((item) => {
-  item.addEventListener('click', (evt) => {
-    if (evt.target === evt.currentTarget) {
-      const popupClosestOverlay = popupAddClosest(evt);
-      closePopup(popupClosestOverlay);
-    };
-  });
-});
-
-
+// Функция добавления новой карточки в начало блока
+const renderCard = (card) => {
+  cardsList.prepend(createCard(card));
+};
 // Функция возвращения события 
 const popupAddClosest = (evt) => {
   return evt.target.closest('.popup');
