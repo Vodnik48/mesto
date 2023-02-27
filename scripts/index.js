@@ -130,8 +130,6 @@ const disableSubmitButton = (objectValidation) => {
     });
   }
 
-containerAdd.addEventListener('submit', submiteCreateForm);
-
 // Функция сохранения внесенных в формы popup изменений при закрытии окна
 formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
