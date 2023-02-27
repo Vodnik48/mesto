@@ -6,7 +6,7 @@ const objectValidation = {
     inputErrorClass: 'popup__input_type_error',
   }
 //Открытие_Закрытие формы проф
-const closeButton = document.querySelector('.popup__button-close')
+const closeButton = document.querySelectorAll('.popup__button-close')
 const popuptypeProfile = document.querySelector('.popup_type_profile')
 const editButton = document.querySelector('.profile__edit-button')
 //Ред_Проф.
