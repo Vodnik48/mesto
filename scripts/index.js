@@ -6,19 +6,19 @@ const objectValidation = {
     inputErrorClass: 'popup__input_type_error',
   }
 //Открытие_Закрытие формы проф
-const closeButton = document.querySelectorAll('.popup__button-close')
-const popuptypeProfile = document.querySelector('.popup_type_profile')
-const editButton = document.querySelector('.profile__edit-button')
+const closeButton = document.querySelectorAll('.popup__button-close');
+const popuptypeProfile = document.querySelector('.popup_type_profile');
+const editButton = document.querySelector('.profile__edit-button');
 //Ред_Проф.
-const formElement = popuptypeProfile.querySelector('.popup__form_type_profile')
-const nameInput = document.querySelector('.popup__input_profile_name')
-const jobInput = document.querySelector('.popup__input_profile_job')
-const profileName = document.querySelector('.profile__name')
-const profileJob = document.querySelector('.profile__job')
+const formElement = popuptypeProfile.querySelector('.popup__form_type_profile');
+const nameInput = document.querySelector('.popup__input_profile_name');
+const jobInput = document.querySelector('.popup__input_profile_job');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
 
 // Открытие_Закрытие формы для доб. карточек 
-const popupTypeCard = document.querySelector('.popup_type_card')
-const openButtonAdd = document.querySelector('.profile__add-button')
+const popupTypeCard = document.querySelector('.popup_type_card');
+const openButtonAdd = document.querySelector('.profile__add-button');
 const closeButtonAdd = document.querySelector('.popup__add-close')
 // инициализация карточек
 const template = document.querySelector('.template-card').content
@@ -153,6 +153,7 @@ closeButton.forEach((item) => {
   item.addEventListener('click', (evt) => {
     const popupClosestCross = popupAddClosest(evt);
     closePopup(popupClosestCross);
+
   });
 });
 // Закрытие всех Popup при нажатии на Overlay 
@@ -173,6 +174,8 @@ openButtonAdd.addEventListener('click', () => {
     title.value = '';
     link.value = '';
 });
+
+//Функция сохранения внесенных в формы popup данных
 popupFormCard.addEventListener('submit', (evt) => {
     evt.preventDefault();
   
