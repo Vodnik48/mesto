@@ -26,8 +26,8 @@ const cards = document.querySelector('.cards')
 const cardsList = cards.querySelector('.cards__ul')
 // добавление карточек
 const popupFormCard = popupTypeCard.querySelector('.popup__form_type_card');
-const title = popupTypeCard.querySelector('.popup__input_type_title')
-const link = popupTypeCard.querySelector('.popup__input_type_link')
+const formtitle = popupTypeCard.querySelector('.popup__input_type_title')
+const formlink = popupTypeCard.querySelector('.popup__input_type_link')
 const containerAdd = document.querySelector('.popup__container_add')
 // popupZoom
 const popupZoomImage = document.querySelector('.popup_type_window')
@@ -171,8 +171,8 @@ openButtonAdd.addEventListener('click', () => {
     openPopup(popupTypeCard)
     resetValidationStyle(objectValidation); 
     
-    title.value = '';
-    link.value = '';
+    formtitle.value = '';
+    formlink.value = '';
 });
 
 //Функция сохранения внесенных в формы popup данных
@@ -180,8 +180,8 @@ popupFormCard.addEventListener('submit', (evt) => {
     evt.preventDefault();
   
     renderCard({
-      name: title.value,
-      link: link.value,
+      name: formtitle.value,
+      link: formlink.value,
     });
   
     evt.target.reset();
