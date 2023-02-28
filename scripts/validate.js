@@ -46,7 +46,7 @@ const toggleButton = (form, config) => {
   const isFormValid = form.checkValidity();
 
   buttonSubmint.disabled = !isFormValid;
-  buttonSubmint.classList.toggle('popup__button_disabled', !isFormValid);
+  buttonSubmint.classList.toggle(config.inactiveButtonClass, !isFormValid);
 }
 
 // Объявляю функцию слушателей всех инпутов 

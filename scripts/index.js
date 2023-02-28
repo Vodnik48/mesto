@@ -6,11 +6,11 @@ const objectValidation = {
     inputErrorClass: 'popup__input_type_error',
   }
 //Открытие_Закрытие формы проф
-const closeButton = document.querySelectorAll('.popup__button-close');
+const popupProfilecloseButton = document.querySelectorAll('.popup__button-close');
 const popuptypeProfile = document.querySelector('.popup_type_profile');
-const editButton = document.querySelector('.profile__edit-button');
+const popupProfileOpenButton = document.querySelector('.profile__edit-button');
 //Ред_Проф.
-const formElement = popuptypeProfile.querySelector('.popup__form_type_profile');
+const formProfile = popuptypeProfile.querySelector('.popup__form_type_profile');
 const nameInput = document.querySelector('.popup__input_profile_name');
 const jobInput = document.querySelector('.popup__input_profile_job');
 const profileName = document.querySelector('.profile__name');
@@ -18,10 +18,10 @@ const profileJob = document.querySelector('.profile__job');
 
 // Открытие_Закрытие формы для доб. карточек 
 const popupTypeCard = document.querySelector('.popup_type_card');
-const openButtonAdd = document.querySelector('.profile__add-button');
-const closeButtonAdd = document.querySelector('.popup__add-close')
+const popupProfileOpenButtonAdd = document.querySelector('.profile__add-button');
+const popupProfilecloseButtonAdd = document.querySelector('.popup__add-close')
 // инициализация карточек
-const template = document.querySelector('.template-card').content
+const cardTemplate = document.querySelector('.template-card').content
 const cards = document.querySelector('.cards')
 const cardsList = cards.querySelector('.cards__ul')
 // добавление карточек
@@ -33,7 +33,7 @@ const containerAdd = document.querySelector('.popup__container_add')
 const popupZoomImage = document.querySelector('.popup_type_window')
 const windowImage = document.querySelector('.popup__window-image')
 const popupZoomTitle = document.querySelector('.popup__zoom-title')
-const closeButtonWindow = document.querySelector('.popup__window-close')
+const popupProfilecloseButtonWindow = document.querySelector('.popup__window-close')
 
 // Границы окна Popup 
 const popupClosest = document.querySelectorAll('.popup');
@@ -58,14 +58,14 @@ const handleEscClosePopup = (evt) => {
 };
 
 // Функция лайк-дизлайка карточки
-const bindCardLike = (buttonLike) => {
+const setCardLikeListener = (buttonLike) => {
   buttonLike.addEventListener('click', (evt) => {
     evt.target.classList.toggle('card__like_active');
   });
 };
 
 // Функция удаления карточки
-const bindCardDelete = (cardData) => {
+const setCardDeleteListener = (cardData) => {
   cardData.addEventListener('click', (evt) => {
     evt.target.closest('.card').remove();
   });
@@ -73,7 +73,7 @@ const bindCardDelete = (cardData) => {
 
 // Функция создания карт
 const createCard = (cardData) => {
-  const cardItem = template.cloneNode(true);
+  const cardItem = cardTemplate.cloneNode(true);
   const cardTitle = cardItem.querySelector('.card__title');                   
   const cardPhoto = cardItem.querySelector('.card__image');                   
   const cardLike = cardItem.querySelector('.card__like');                 
@@ -82,16 +82,16 @@ const createCard = (cardData) => {
   cardTitle.textContent = cardData.name;
   cardPhoto.src = cardData.link;
   cardPhoto.alt = cardData.alt;
-
-  bindCardPreview(cardPhoto);                                          
-  bindCardLike(cardLike);                                              
-  bindCardDelete(cardDel);
+  
+  setbindCardPreviewListener(cardPhoto);                                          
+  setCardLikeListener(cardLike);                                              
+  setCardDeleteListener(cardDel);
 
   return cardItem;
 };
 
 // Функция открытия просмотра изображения карточки
-const bindCardPreview = (cardImageElement) => {
+const setbindCardPreviewListener = (cardImageElement) => {
   cardImageElement.addEventListener('click', (evt) => {
     openPopup(popupZoomImage);
 
@@ -131,7 +131,7 @@ const disableSubmitButton = (objectValidation) => {
   }
 
 // Функция сохранения внесенных в формы popup изменений при закрытии окна
-formElement.addEventListener('submit', (evt) => {
+formProfile.addEventListener('submit', (evt) => {
     evt.preventDefault();
 
     profileName.textContent = nameInput.value;
@@ -141,7 +141,7 @@ formElement.addEventListener('submit', (evt) => {
 });
 
 // Функция открытия Popup редактирования профиля
-editButton.addEventListener('click', () => {
+popupProfileOpenButton.addEventListener('click', () => {
     openPopup(popuptypeProfile);
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
@@ -149,7 +149,7 @@ editButton.addEventListener('click', () => {
 });
 
 // Закрытие всех Popup при нажатии на крестик 
-closeButton.forEach((item) => {
+popupProfilecloseButton.forEach((item) => {
   item.addEventListener('click', (evt) => {
     const popupClosestCross = popupAddClosest(evt);
     closePopup(popupClosestCross);
@@ -157,8 +157,8 @@ closeButton.forEach((item) => {
   });
 });
 // Закрытие всех Popup при нажатии на Overlay 
-popupClosest.forEach((item) => {
-  item.addEventListener('click', (evt) => {
+popupClosest.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
     if (evt.target === evt.currentTarget) {
       const popupClosestOverlay = popupAddClosest(evt);
       closePopup(popupClosestOverlay);
@@ -167,7 +167,7 @@ popupClosest.forEach((item) => {
 });
 
 // Функция открытия Popup добавления Карточки Места
-openButtonAdd.addEventListener('click', () => { 
+popupProfileOpenButtonAdd.addEventListener('click', () => { 
     openPopup(popupTypeCard)
     resetValidationStyle(objectValidation); 
     
