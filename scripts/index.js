@@ -81,7 +81,7 @@ const createCard = (cardData) => {
   
   cardTitle.textContent = cardData.name;
   cardPhoto.src = cardData.link;
-  cardPhoto.alt.textContent = 'Фотография места' + cardData.name;
+  cardPhoto.alt = cardData.alt ?? cardData.name;
   
   setbindCardPreviewListener(cardPhoto);                                          
   setCardLikeListener(cardLike);                                              
@@ -96,7 +96,7 @@ const setbindCardPreviewListener = (cardImageElement) => {
     openPopup(popupZoomImage);
 
     windowImage.src = cardImageElement.src;
-    windowImage.alt = cardImageElement.alt;
+    windowImage.alt = cardImageElement.alt ?? cardImageElement.name;
     popupZoomTitle.textContent = evt.target.closest('.card').textContent;
   });
 };
