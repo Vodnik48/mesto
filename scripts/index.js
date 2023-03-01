@@ -81,7 +81,7 @@ const createCard = (cardData) => {
   
   cardTitle.textContent = cardData.name;
   cardPhoto.src = cardData.link;
-  cardPhoto.alt = cardData.alt;
+  cardPhoto.alt.textContent = 'Фотография места' + cardData.name;
   
   setbindCardPreviewListener(cardPhoto);                                          
   setCardLikeListener(cardLike);                                              
