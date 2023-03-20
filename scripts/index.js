@@ -18,7 +18,7 @@ const popupProfileOpenButtonAdd = document.querySelector('.profile__add-button')
 const popupProfilecloseButtonAdd = document.querySelector('.popup__add-close')
 // инициализация карточек
 const cardTemplate = document.querySelector('.template-card').content
-const cardsList = cards.querySelector('.cards__ul')
+const cardsList = document.querySelector('.cards__ul')
 // добавление карточек
 const popupFormCard = popupTypeCard.querySelector('.popup__form_type_card');
 const formtitle = popupTypeCard.querySelector('.popup__input_type_title')
