@@ -15,9 +15,7 @@ const profileJob = document.querySelector('.profile__job');
 // Открытие_Закрытие формы для доб. карточек 
 const popupTypeCard = document.querySelector('.popup_type_card');
 const popupProfileOpenButtonAdd = document.querySelector('.profile__add-button');
-const popupProfilecloseButtonAdd = document.querySelector('.popup__add-close')
 // инициализация карточек
-const cardTemplate = document.querySelector('.template-card').content
 const cardsList = document.querySelector('.cards__ul')
 // добавление карточек
 const popupFormCard = popupTypeCard.querySelector('.popup__form_type_card');
@@ -27,8 +25,6 @@ const formlink = popupTypeCard.querySelector('.popup__input_type_link')
 const popupZoomImage = document.querySelector('.popup_type_window')
 const windowImage = document.querySelector('.popup__window-image')
 const popupZoomTitle = document.querySelector('.popup__zoom-title')
-const popupProfilecloseButtonWindow = document.querySelector('.popup__window-close')
-
 // Границы окна Popup 
 const popupClosest = document.querySelectorAll('.popup');
 
@@ -52,7 +48,7 @@ const handleEscClosePopup = (evt) => {
 };
 // Функция создания карт
 const createCard = (cardData) => {
-  const card = new Card(cardData, cardTemplate, setbindCardPreviewListener);
+  const card = new Card(cardData, '.template-card', setbindCardPreviewListener);
 
   return card.generateCard();
 };
