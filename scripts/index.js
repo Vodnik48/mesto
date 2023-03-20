@@ -55,13 +55,9 @@ const createCard = (cardData) => {
 
 // Функция открытия просмотра изображения карточки
 const setbindCardPreviewListener = (cardImageElement) => {
-  cardImageElement.addEventListener('click', (evt) => {
-    openPopup(popupZoomImage);
-
+     openPopup(popupZoomImage);
     windowImage.src = cardImageElement.link;
-    popupZoomTitle.textContent = cardImage.name;
-    windowImage.alt = cardImageElement.alt ?? cardImageElement.name;
-  });
+    popupZoomTitle.textContent = cardImageElement.name;
 };
 
 // Создание карточек из массива
