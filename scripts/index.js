@@ -57,6 +57,7 @@ const createCard = (cardData) => {
 const setbindCardPreviewListener = (cardImageElement) => {
      openPopup(popupZoomImage);
     windowImage.src = cardImageElement.link;
+    windowImage.alt = cardImageElement.name;
     popupZoomTitle.textContent = cardImageElement.name;
 };
 

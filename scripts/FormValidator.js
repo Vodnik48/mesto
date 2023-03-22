@@ -7,6 +7,8 @@ class FormValidator {
     this._errorClass = config.errorClass;
     this._formSelector = config.formSelector;
     this._form = form;
+    this._buttonSubmint = this._form.querySelector(this._submitButtonSelector);
+    this._inputList = this._form.querySelectorAll(this._inputSelector);
   }
 
   // Функция валидации формы 
@@ -41,7 +43,7 @@ class FormValidator {
 
   // Функция переключения кнопки submit
   _toggleButton() {
-    this._buttonSubmint = this._form.querySelector(this._submitButtonSelector);
+    
     this._isFormValid = this._form.checkValidity();
     this._buttonSubmint.disabled = !this._isFormValid;
     this._buttonSubmint.classList.toggle(this._inactiveButtonClass, !this._isFormValid);
@@ -50,7 +52,7 @@ class FormValidator {
   // Объявить функцию слушателей всех инпутов 
   _addInputListners() {
     this._toggleButton();
-    this._inputList = this._form.querySelectorAll(this._inputSelector);
+    
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._handleFormInput(inputElement);
