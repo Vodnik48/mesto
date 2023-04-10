@@ -1,6 +1,6 @@
-import popup from '../components/popup.js'
+import Popup from './Popup.js'
 
-class PopupWithImage extends popup {
+class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
     this._imgCard = this._popup.querySelector('.popup__window-image');
