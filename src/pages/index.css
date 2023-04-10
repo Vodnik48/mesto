@@ -1,14 +1,10 @@
 @import url(../vendor/normalize.css);
-
 @import url(../fonts/fonts.css);
 
 @import url(../blocks/root/root.css);
 
-
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-
-
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__group-conteiner/profile__group-conteiner.css);
@@ -19,7 +15,6 @@
 @import url(../blocks/profile/__job/profile__job.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__group/profile__group.css);
-
 
 @import url(../blocks/cards/__ul/cards__ul.css);
 

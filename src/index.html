@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Место</title>
   </head>
+
   <body class="root">
     <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="Логотип Место" />
+      <img
+        class="header__logo"
+        src="<%=require('./images/logo.svg')%>"
+        alt="Логотип Место"
+      />
     </header>
     <main>
       <section class="profile">
@@ -17,7 +21,7 @@
           <div class="profile__avatar">
             <img
               alt="Фото профиля."
-              src="./images/image.jpg"
+              src="<%=require('./images/image.jpg')%>"
               class="profile__image"
             />
           </div>
@@ -36,7 +40,7 @@
       </section>
     </main>
     <footer class="footer">
-      <p class="footer__copyright">© 2020 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
     <div class="popup popup_type_profile">
       <div class="popup__container">
@@ -82,10 +86,10 @@
     <div class="popup popup_type_card">
       <div class="popup__container popup__container_add">
         <h2 class="popup__title">Новое место</h2>
-        <form 
+        <form
           class="popup__form popup__form_type_card"
-          name="form-place" 
-          id="card__form" 
+          name="form-place"
+          id="card__form"
           novalidate
         >
           <input
@@ -121,7 +125,7 @@
     <div class="popup popup_type_window">
       <div class="popup__window-container">
         <button
-          aria-label="Close"  
+          aria-label="Close"
           class="popup__button-close popup__window-close"
           type="button"
         ></button>
@@ -147,6 +151,5 @@
         </div>
       </li>
     </template>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
