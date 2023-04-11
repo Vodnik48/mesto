@@ -8,7 +8,7 @@ import { PopupWithForm } from '../components/PopupWithForm.js';
 import { UserInfo } from '../components/UserInfo.js';
 import { initialCards, objectValidation } from '../components/massiv-foto.js';
 
-const windowImage = new PopupWithImage('.popup__window-image')
+const windowImage = new PopupWithImage('.popup_type_window')
 
 // Функция создания карт
 const createCard = (cardData) => {
